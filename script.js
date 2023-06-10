@@ -1,4 +1,4 @@
-const render = async () => {
+const renderZiggy = async (e) => {
   let html = `
     <button
       class="fixed bottom-10 right-10 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md transition-transform duration-300 ease-in-out transform hover:scale-105"
@@ -18,7 +18,7 @@ const render = async () => {
           >&times;</span
         >
         <iframe
-          src="https://www.oustro.xyz/"
+          src="https://ziggy.oustro.xyz/t/${e}?embedded=true"
           width="100%"
           height="100%"
           frameborder="0"
