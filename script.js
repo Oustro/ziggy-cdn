@@ -2,6 +2,7 @@ const renderZiggy = async (e) => {
   let html = `
     <div class="fixed bg-gradient-to-r shadow bottom-10 right-10 from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% rounded-full p-[1px]">
       <div
+        id="ziggyButton"
         class="bg-slate-100 hover:bg-slate-200 text-white p-4 rounded-full transition-transform duration-300 ease-in-out transform hover:scale-105"
         onclick="openZiggy()"
       >
@@ -32,14 +33,30 @@ const renderZiggy = async (e) => {
     document.getElementById("app").innerHTML = html;
   };
 
+  var openModal = false
   function openZiggy() {
+    if (openModal) {
+      closeZiggy()
+      openModal = false
+      return
+    }
+    openModal = true
     var ziggyModal = document.getElementById("ziggyModal");
     ziggyModal.classList.add("opacity-100");
     ziggyModal.classList.remove("pointer-events-none");
-    }
+    var ziggyButton = document.getElementById("ziggyButton");
+    ziggyButton.classList.remove("bg-slate-100");
+    ziggyButton.classList.remove("hover:bg-slate-200");
+    ziggyButton.classList.add("bg-slate-200");
+    
+  }
 
   function closeZiggy() {
     var ziggyModal = document.getElementById("ziggyModal");
     ziggyModal.classList.remove("opacity-100");
     ziggyModal.classList.add("pointer-events-none");
+    var ziggyButton = document.getElementById("ziggyButton");
+    ziggyButton.classList.remove("bg-slate-200");
+    ziggyButton.classList.add("bg-slate-100");
+    ziggyButton.classList.add("hover:bg-slate-200");
   }
