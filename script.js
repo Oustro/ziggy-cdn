@@ -31,7 +31,7 @@ const renderZiggy = async (e) => {
         </span
         >
         <iframe
-        src="https://ziggy.oustro.xyz/t/${e}?embedded=true"
+        src="https://www.useziggy.com/t/${e}?embedded=true"
         width="100%"
         height="100%"
         frameborder="0"
